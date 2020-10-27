@@ -1,0 +1,48 @@
+:root {
+  --ltgray: #f8f8f8;
+  --dkgray: #707070;
+  --ltblue: #1792d2;
+  --dkblue: #143774;
+}
+
+/* =general tags
+----------------------------------------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu bold', Arial, Helvetica, sans-serif;
+}
+
+/* =layout
+----------------------------------------------------------------*/
+
+.site-title {
+  background-color: var(--ltgray);
+  text-align: center;
+  padding: 2em;
+}
+
+nav ul {
+}
+
+nav li {
+}
+
+nav a {
+}
+
+nav a:hover {
+}
+
+/* =typography
+----------------------------------------------------------------*/
+h1 {
+  font-family: Lora, 'Times New Roman', serif;
+  font-size: 3.375rem;
+}
+
+.subtitle {
+  color: var(--ltblue);
+  text-transform: uppercase;
+}
