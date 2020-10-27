@@ -3,6 +3,7 @@
   --dkgray: #707070;
   --ltblue: #1792d2;
   --dkblue: #143774;
+  --border-colour: #ebebeb;
 }
 
 /* =general tags
@@ -11,38 +12,281 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu bold', Arial, Helvetica, sans-serif;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* =layout
 ----------------------------------------------------------------*/
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-.site-title {
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
   background-color: var(--ltgray);
+  padding: 2em 0;
   text-align: center;
-  padding: 2em;
+  margin-bottom: 2em;
+}
+
+nav {
+  font-size: 1rem;
 }
 
 nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 nav li {
+  margin-left: 2em;
+  margin: 0.5em;
 }
 
-nav a {
+@media (min-width: 675px) {
+  .container-flex {
+    flex-direction: row;
+  }
+
+  main {
+    width: 70%;
+    margin-bottom: 5em;
+  }
+
+  aside {
+    width: 25%;
+    min-width: 200px;
+    margin-left: 1em;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  .site-title {
+    text-align: left;
+  }
 }
 
-nav a:hover {
+footer {
+  background-color: var(--dkblue);
+  color: var(--ltgray);
+  text-align: center;
+  padding: 3em 0;
 }
 
 /* =typography
 ----------------------------------------------------------------*/
-h1 {
-  font-family: Lora, 'Times New Roman', serif;
-  font-size: 3.375rem;
+h1,
+h2,
+h3 {
+  font-family: Lora, serif;
+  font-weight: 400;
+  color: var(--dkblue);
+  margin-top: 0;
 }
 
-.subtitle {
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+a {
+  color: var(--ltblue);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--dkblue);
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.logo-subtitle {
   color: var(--ltblue);
   text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.article-title {
+  font-size: 1.5rem;
+}
+
+.article-read-more,
+.article-info {
+  font-size: 0.875rem;
+}
+
+.article-info {
+  margin: 2em 0;
+}
+
+.article-read-more {
+  color: var(--ltblue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+  color: var(--dkblue);
+  text-decoration: underline;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dkblue);
+  font-weight: bold;
+  padding: 0.25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--ltblue);
+}
+
+.current-page {
+  border-bottom: 2px solid var(--dkgray);
+}
+
+.current-page:hover {
+  color: var(--dkgray);
+}
+
+/* =articles
+----------------*/
+
+.article-featured {
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--dkgray);
+}
+
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+@media (min-width: 675px) {
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .article-recent-main {
+    width: 70%;
+  }
+
+  .article-recent-secondary {
+    width: 25%;
+  }
+
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-image {
+    order: -2;
+  }
+
+  .article-info {
+    order: -1;
+  }
+
+  .article-image {
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
+}
+
+/* =widgets
+================================*/
+
+.widget-title,
+.widget-recent-post-title {
+  font-size: 1rem;
+}
+
+.widget-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.widget-recent-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-recent-post {
+  border-bottom: 1px solid var(--dkgray);
+  margin-bottom: 1em;
+}
+
+.widget-recent-post:last-of-type {
+  border: none;
+  margin-bottom: 0;
+}
+
+.widget-image {
+  order: -1;
+  margin-bottom: 1em;
+}
+
+.sidebar-widget {
+  border: 1.125em solid var(--border-colour);
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.widget-title {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+/* =about
+--------------------------------*/
+.image-full {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
+
+.heading-about {
+  color: var(--ltblue);
 }
