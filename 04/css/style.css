@@ -1,0 +1,194 @@
+:root {
+  /* colours  */
+  --dkgray: #404040;
+  --white: rgba(255, 255, 255, 1);
+  --primary: #f18119;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =general tags
+----------------------------------------------------------------*/
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  color: var(--dkgray);
+  text-align: center;
+}
+
+/* =layout
+----------------------------------------------------------------*/
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.inner-container {
+  max-width: 400px;
+  margin: 0;
+}
+
+header {
+  background-color: var(--dkgray);
+  background-image: url(../images/ribs.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center bottom;
+  padding: 0 0.5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+.banner {
+  order: -1;
+  border-top: 5px solid #f18119;
+  border-image: linear-gradient(to right, #ffa51d, #ff713b) 1;
+  margin: 0 auto;
+  padding-top: 0.25em;
+}
+
+main {
+  padding: 2em 1em;
+}
+
+header > *,
+main > * {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  width: 80%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > * {
+  font-family: inherit;
+  text-align: inherit;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.input {
+  border: 1px solid var(--dkgray);
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.input:focus {
+  transform: scale(1.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 3em;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #ffa51d, #ff713b);
+  color: var(--white);
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: black;
+  transform: scale(1.1);
+}
+
+/* =typography
+----------------------------------------------------------------*/
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--white);
+  margin: 0 auto;
+}
+
+h1 + p {
+  color: var(--primary);
+  font-size: 1.3125rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0 auto;
+}
+
+h2 + p {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.banner {
+  font-size: 0.625rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.small-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
+
+strong {
+  font-weight: 900;
+}
+
+/* =media queries
+----------------------------------------------------------------*/
+@media (min-width: 500px) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  h1 + p {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  header,
+  main {
+    width: 50%;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
