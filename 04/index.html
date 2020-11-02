@@ -14,17 +14,18 @@
             <p>Join us for this live webinar</p>
             <p class="banner">Mouthwateringly delicious</p>
         </header>
-        <main>
+        <main id="main-content">
             <h2>Become a BBQ master!</h2>
             <p>Register Today</p>
             <p>BBQ isn't just standing in front of your grill with it on full blast and hoping for the best. It's an art! One way to speed up the process is to learn from the best. You can do just that by signing up for this free webinar!</p>
-            <form class="form" action="#" method="POST">
-                <input class="input" type="text" placeholder="First name" required>
-                <input class="input" type="email" placeholder="Email" required>
+            <form id="email-collector" class="form" action="#" method="POST">
+                <input name="first-name" class="input" type="text" placeholder="First name" required>
+                <input name="email-address" class="input" type="email" placeholder="Email" required>
                 <button class="btn btn-primary">Register</button>
             </form>
             <p class="small-print">We'll never share your information without your permission</p>
         </main>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
